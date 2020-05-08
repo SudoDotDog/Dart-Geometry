@@ -37,7 +37,7 @@ double calculateRadiusDistance(
 
   final double curvedDistance = radiusCombinedDifference * EARTH_RADIUS;
 
-  final double roundPrecision = pow(10, precision);
+  final double roundPrecision = pow(10, precision).toDouble();
   final double rounded =
       (curvedDistance * roundPrecision).round() / roundPrecision;
 
