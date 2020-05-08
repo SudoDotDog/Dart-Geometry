@@ -47,7 +47,7 @@ double calculateRadiusDistance(
 double calculateRadiusDistanceInMeter(
   Coordinate from,
   Coordinate to, {
-  int precision = 3,
+  int precision = 2,
 }) {
   final double distanceInKilometer = calculateRadiusDistance(
     from,
