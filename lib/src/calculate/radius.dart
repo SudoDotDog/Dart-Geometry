@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:geometry/src/entity/entity.dart';
@@ -7,42 +6,55 @@ const double ANGLE = 180.0;
 const double EARTH_RADIUS = 6378.137;
 
 double calculateRadiusRange(double distance) {
-
-    return (distance * pi) / ANGLE;
+  return (distance * pi) / ANGLE;
 }
 
-double calculateRadiusDistance(Coordinate from, Coordinate to, {
+double calculateRadiusDistance(
+  Coordinate from,
+  Coordinate to, {
   int precision = 3,
 }) {
+  final double radiusFromLatitude = calculateRadiusRange(from.latitude);
+  final double radiusFromLongitude = calculateRadiusRange(from.longitude);
 
-    const radiusFromLatitude: number = calculateRadiusRange(from.latitude);
-    const radiusFromLongitude: number = calculateRadiusRange(from.longitude);
+  final double radiusToLatitude = calculateRadiusRange(to.latitude);
+  final double radiusToLongitude = calculateRadiusRange(to.longitude);
 
-    const radiusToLatitude: number = calculateRadiusRange(to.latitude);
-    const radiusToLongitude: number = calculateRadiusRange(to.longitude);
+  final double radiusLatitudeDifference = radiusFromLatitude - radiusToLatitude;
+  final double radiusLongitudeDifference =
+      radiusFromLongitude - radiusToLongitude;
 
-    const radiusLatitudeDifference: number = radiusFromLatitude - radiusToLatitude;
-    const radiusLongitudeDifference: number = radiusFromLongitude - radiusToLongitude;
+  final double latitudeDifference = pow(sin(radiusLatitudeDifference / 2), 2);
+  final double longitudeDifference = pow(sin(radiusLongitudeDifference / 2), 2);
 
-    const latitudeDifference: number = Math.pow(Math.sin(radiusLatitudeDifference / 2), 2);
-    const longitudeDifference: number = Math.pow(Math.sin(radiusLongitudeDifference / 2), 2);
+  final double extensionDifference =
+      cos(radiusFromLatitude) * cos(radiusToLatitude);
 
-    const extensionDifference: number = Math.cos(radiusFromLatitude) * Math.cos(radiusToLatitude);
+  final double radiusCombinedDifference = 2 *
+      asin(
+        sqrt(latitudeDifference + extensionDifference * longitudeDifference),
+      );
 
-    const radiusCombinedDifference: number = 2 * Math.asin(Math.sqrt(latitudeDifference + extensionDifference * longitudeDifference));
+  final double curvedDistance = radiusCombinedDifference * EARTH_RADIUS;
 
-    const curvedDistance: number = radiusCombinedDifference * EARTH_RADIUS;
+  final double roundPrecision = pow(10, precision);
+  final double rounded =
+      (curvedDistance * roundPrecision).round() / roundPrecision;
 
-    const roundPrecision: number = Math.pow(10, precision);
-    const rounded: number = Math.round(curvedDistance * roundPrecision) / roundPrecision;
+  return rounded;
+}
 
-    return rounded;
-};
+double calculateRadiusDistanceInMeter(
+  Coordinate from,
+  Coordinate to, {
+  int precision = 3,
+}) {
+  final double distanceInKilometer = calculateRadiusDistance(
+    from,
+    to,
+    precision: 3 + precision,
+  );
+  final double distanceInMeter = distanceInKilometer * 1000;
 
-export const calculateRadiusDistanceInMeter = (from: Coordinate, to: Coordinate, precision: number = 2): number => {
-
-    const distanceInKilometer: number = calculateRadiusDistance(from, to, 3 + precision);
-    const distanceInMeter: number = distanceInKilometer * 1000;
-
-    return distanceInMeter;
-};
+  return distanceInMeter;
+}
