@@ -1,3 +1,5 @@
-## [0.0.1] - TODO: Add release date.
+## 0.0.1
 
-* TODO: Describe initial release.
+-   Initial Version
+-   Add Radius Feature
+-   Add Linear Range Feature
