@@ -1,4 +1,4 @@
-library geometry;
+library coordinate;
 
 export "./src/calculate/radius.dart";
 export "./src/calculate/range.dart";

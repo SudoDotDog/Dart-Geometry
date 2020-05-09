@@ -1,4 +1,4 @@
-import 'package:geometry/geometry.dart';
+import 'package:coordinate/coordinate.dart';
 import 'package:test/test.dart';
 
 void main() {
