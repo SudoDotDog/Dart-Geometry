@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:coordinate/coordinate.dart';
 
 List<Coordinate> arrangeCoordinateByLinearDistance(
@@ -13,4 +11,6 @@ List<Coordinate> arrangeCoordinateByLinearDistance(
   final List<Coordinate> result = [];
 
   while (destinationsSet.length > 0) {}
+
+  return result;
 }
