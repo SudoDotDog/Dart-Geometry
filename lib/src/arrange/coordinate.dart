@@ -10,7 +10,10 @@ List<Coordinate> arrangeCoordinateByLinearDistance(
 
   final List<Coordinate> result = [];
 
-  while (destinationsSet.length > 0) {}
+  while (destinationsSet.length > 0) {
+    final Coordinate currentStart =
+        result.length == 0 ? start : result[result.length - 1];
+  }
 
   return result;
 }
