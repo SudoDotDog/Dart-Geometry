@@ -8,3 +8,4 @@ export "./src/calculate/range.dart";
 export "./src/entity/coordinate.dart";
 export "./src/entity/declare.dart";
 export "./src/entity/range.dart";
+export "./src/sort/sort.dart";
