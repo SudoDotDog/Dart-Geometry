@@ -17,7 +17,7 @@ class _NearestObjectStatus<T> {
 Coordinate getNearestCoordinateByLinearDistance(
     Coordinate start, List<Coordinate> destinations) {
   _NearestCoordinateStatus status =
-      _NearestCoordinateStatus(null, -double.infinity);
+      _NearestCoordinateStatus(null, double.infinity);
 
   if (destinations.length == 0) {
     return null;
