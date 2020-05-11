@@ -1,4 +1,5 @@
 import 'package:coordinate/coordinate.dart';
+import 'package:coordinate/src/entity/declare.dart';
 
 class _NearestCoordinateStatus {
   final Coordinate coordinate;
@@ -32,4 +33,27 @@ Coordinate getNearestCoordinateByLinearDistance(
   }
 
   return status.coordinate;
+}
+
+T getNearestObjectByLinearDistance<T>(
+  Coordinate start,
+  List<T> objects,
+  GetCoordinateFunction<T> getCoordinateFunction,
+) {
+  _NearestObjectStatus<T> status = _NearestObjectStatus(null, double.infinity);
+
+  if (objects.length == 0) {
+    return null;
+  }
+
+  for (final T object in objects) {
+    final Coordinate coordinate = getCoordinateFunction(object);
+    final double distance = calculateLinearDistance(start, coordinate);
+
+    if (distance < status.distance) {
+      status = _NearestObjectStatus(object, distance);
+    }
+  }
+
+  return status.object;
 }
