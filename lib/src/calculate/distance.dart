@@ -2,7 +2,10 @@ import 'dart:math';
 
 import 'package:coordinate/src/entity/coordinate.dart';
 
-double calculateLinearDistance(Coordinate start, Coordinate end) {
+double calculateLinearDistance(
+  Coordinate start,
+  Coordinate end,
+) {
   final double latitudeDifference = (start.latitude - end.latitude).abs();
   final double longitudeDifference = (start.longitude - end.longitude).abs();
 
@@ -13,7 +16,10 @@ double calculateLinearDistance(Coordinate start, Coordinate end) {
 }
 
 double calculateLinearDistanceWithCache(
-    Map<String, double> cache, Coordinate start, Coordinate end) {
+  Map<String, double> cache,
+  Coordinate start,
+  Coordinate end,
+) {
   final String parsed = "${end.latitude}:${end.longitude}";
 
   if (cache.containsKey(parsed)) {

@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:coordinate/src/entity/coordinate.dart';
 import 'package:coordinate/src/entity/range.dart';
 
-CoordinateRange getLinearRangeByCoordinates(List<Coordinate> coordinates) {
+CoordinateRange getLinearRangeByCoordinates(
+  List<Coordinate> coordinates,
+) {
   double maxLatitude = -double.maxFinite;
   double minLatitude = double.maxFinite;
   double maxLongitude = -double.maxFinite;

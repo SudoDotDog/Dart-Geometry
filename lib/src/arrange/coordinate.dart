@@ -3,7 +3,9 @@ import 'package:coordinate/src/entity/coordinate.dart';
 import 'package:coordinate/src/entity/declare.dart';
 
 List<Coordinate> arrangeCoordinateByLinearDistance(
-    Coordinate start, List<Coordinate> destinations) {
+  Coordinate start,
+  List<Coordinate> destinations,
+) {
   final Set<Coordinate> destinationsSet = new Set();
 
   for (final Coordinate destination in destinations) {
