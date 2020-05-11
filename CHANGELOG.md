@@ -5,3 +5,7 @@
 -   Add Linear Range Feature
 
 ## 1.0.0
+
+-   First Release
+-   Add nearest function
+-   Add distance function
