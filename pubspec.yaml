@@ -1,6 +1,6 @@
 name: coordinate
 description: Geometry for Dart
-version: 0.0.1
+version: 1.0.0
 homepage: https://sudo.dog
 
 environment:
