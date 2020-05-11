@@ -16,8 +16,7 @@ void main() {
       final Coordinate target =
           getNearestCoordinateByLinearDistance(from, destinations);
 
-      expect(target.latitude, equals(-3));
-      expect(target.longitude, equals(4));
+      expect(target, Coordinate(-3, 4));
     });
   });
 
@@ -32,8 +31,7 @@ void main() {
       final MockObject target = getNearestObjectByLinearDistance(
           from, destinations, (MockObject object) => object.value);
 
-      expect(target.value.latitude, equals(-3));
-      expect(target.value.longitude, equals(4));
+      expect(target, Coordinate(-3, 4));
     });
   });
 }
