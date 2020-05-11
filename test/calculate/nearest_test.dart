@@ -30,7 +30,7 @@ void main() {
       final MockObject target = getNearestObjectByLinearDistance(
           from, destinations, (MockObject object) => object.value);
 
-      expect(target, Coordinate(-3, 4));
+      expect(target, createMockObject(-3, 4));
     });
   });
 }
