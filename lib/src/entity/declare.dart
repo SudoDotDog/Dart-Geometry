@@ -1,3 +1,3 @@
-import 'package:coordinate/coordinate.dart';
+import 'package:coordinate/src/entity/coordinate.dart';
 
 typedef GetCoordinateFunction<T> = Coordinate Function(T object);

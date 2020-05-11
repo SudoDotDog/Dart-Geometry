@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:coordinate/src/entity/entity.dart';
+import 'package:coordinate/src/entity/coordinate.dart';
 
 const double ANGLE = 180.0;
 const double EARTH_RADIUS = 6378.137;

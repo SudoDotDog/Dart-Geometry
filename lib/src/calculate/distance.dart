@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:coordinate/coordinate.dart';
+import 'package:coordinate/src/entity/coordinate.dart';
 
 double calculateLinearDistance(Coordinate start, Coordinate end) {
   final double latitudeDifference = (start.latitude - end.latitude).abs();

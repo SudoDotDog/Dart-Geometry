@@ -1,5 +1,4 @@
 import 'package:coordinate/coordinate.dart';
-import 'package:coordinate/src/calculate/nearest.dart';
 import 'package:test/test.dart';
 
 import '../mock/object.dart';

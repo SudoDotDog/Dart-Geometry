@@ -1,4 +1,5 @@
 import 'package:coordinate/coordinate.dart';
+import 'package:coordinate/src/entity/coordinate.dart';
 import 'package:coordinate/src/entity/declare.dart';
 
 List<Coordinate> arrangeCoordinateByLinearDistance(
