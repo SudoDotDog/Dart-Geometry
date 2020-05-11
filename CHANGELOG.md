@@ -9,3 +9,9 @@
 -   First Release
 -   Add nearest function
 -   Add distance function
+
+## 1.1.0
+
+-   Add Sort function
+-   Add Sort with cache function
+-   Add linear distance with cache function
