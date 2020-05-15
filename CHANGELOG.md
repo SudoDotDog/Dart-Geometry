@@ -15,3 +15,8 @@
 -   Add Sort function
 -   Add Sort with cache function
 -   Add linear distance with cache function
+
+## 1.2.0
+
+-   Add numeric
+-   Implement coordinate factory feature
